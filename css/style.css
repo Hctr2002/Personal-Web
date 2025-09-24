@@ -1,0 +1,160 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,700&display=swap');
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Sección de la Cabecera (Header) */
+.hero {
+    background: url('../images/Fondo.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para que el texto resalte */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header-content h1 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #3658f0;
+}
+
+/* Navegación y redes sociales */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 400;
+}
+
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.social-icons .icon-link {
+    color: white;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Sección "About Me" */
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    color: #3658f0;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-text .description {
+    text-align: justify;
+    color: #555;
+}
+
+.about-text .quote {
+    font-style: italic;
+    color: #777;
+    border-left: 3px solid #ccc;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.about-info {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Enlaces rápidos (iconos inferiores) */
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #e9e9e9;
+    flex-wrap: wrap;
+}
+
+.link-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.link-card:hover {
+    transform: translateY(-10px);
+}
+
+.link-card i {
+    font-size: 3em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
