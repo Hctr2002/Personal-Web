@@ -149,6 +149,19 @@ h1, h2, h3 {
     filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón en los badges */
 }
 
+/* Estilos para el bloque de código */
+.code-block {
+    background-color: #161b22;
+    color: #4dff88; /* Verde neón para el código */
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    white-space: pre;
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 1px solid #4dff88;
+}
 
 /* Estilos para la sección de lenguajes más usados */
 .most-used-langs {
@@ -322,4 +335,122 @@ h1, h2, h3 {
 
 .futuristic-footer .social-icons .icon-link img {
     margin: 0 10px;
+}
+
+/* Nuevos estilos para la página de Contacto (contact.html) */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #0d1117;
+}
+
+.contact-card {
+    background-color: #161b22;
+    border: 1px solid #4dff88;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(77, 255, 136, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #00bfff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex; /* Usamos flexbox para alinear label e input */
+    align-items: center; /* Centramos verticalmente */
+    gap: 20px; /* Espacio entre label e input */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0; /* Eliminamos el margen inferior */
+    width: 80px; /* Ancho fijo para las etiquetas */
+    text-align: right; /* Alineamos el texto a la derecha */
+    font-weight: bold;
+    color: #b3c0cf;
+}
+
+.form-group input,
+.form-group textarea {
+    flex: 1; /* El input/textarea ocupa el espacio restante */
+    padding: 12px;
+    border: 1px solid #4dff88;
+    background-color: #0d1117;
+    color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.form-button {
+    background-color: #00bfff;
+    color: #0d1117;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end;
+}
+
+.form-button:hover {
+    background-color: #4dff88;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .profile-summary-futuristic {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icons .icon-link img {
+        margin: 0 10px;
+    }
+    
+    .form-group {
+        flex-direction: column; /* Apila las etiquetas y los campos en pantallas pequeñas */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .form-group label {
+        width: auto; /* Ancho automático para etiquetas */
+        text-align: left; /* Alineación a la izquierda */
+    }
 }
