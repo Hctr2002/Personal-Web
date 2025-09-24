@@ -149,6 +149,7 @@ h1, h2, h3 {
     filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón en los badges */
 }
 
+
 /* Estilos para la sección de lenguajes más usados */
 .most-used-langs {
     margin-top: 40px;
@@ -209,6 +210,69 @@ h1, h2, h3 {
     margin: 5px 0 0;
     font-style: italic;
     color: #b3c0cf;
+}
+
+/* Nuevos estilos para la página de Experiencia (experience.html) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.project-card {
+    background-color: #161b22;
+    border: 1px solid #4dff88;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(77, 255, 136, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #4dff88;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    margin: 15px 15px 5px;
+    color: #00bfff;
+}
+
+.project-card p {
+    margin: 0 15px 15px;
+    color: #b3c0cf;
+    text-align: left;
+}
+
+.project-links {
+    padding: 0 15px 15px;
+    text-align: right;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #00bfff;
+    color: #0d1117;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-btn:hover {
+    background-color: #4dff88;
+    transform: scale(1.05);
 }
 
 /* Estilos para la sección de aprendizaje */
