@@ -1,0 +1,261 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,700&display=swap');
+
+/* Estilos Generales para el tema futurista */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: #f0f0f0; /* Color de texto claro */
+    line-height: 1.6;
+    background-color: #0d1117; /* Fondo oscuro */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #00bfff; /* Color de acento neón */
+}
+
+/* Sección de la Cabecera (Header) */
+.hero {
+    background: url('../images/Fondo.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1; 
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para que el texto resalte */
+    z-index: 2;
+}
+
+.header-content {
+    position: relative;
+    z-index: 3;
+}
+
+.header-content h1 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+    text-shadow: 0 0 10px #00bfff; /* Efecto de brillo de neón */
+}
+
+.header-content p {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #4dff88; /* Color de acento secundario */
+}
+
+/* Navegación y redes sociales */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #4dff88; /* Cambio de color al pasar el cursor */
+}
+
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.social-icons .icon-link img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    display: block; 
+    margin: 10px 0; 
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.5); /* Sombra de neón */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.social-icons .icon-link img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff; /* Efecto de brillo más intenso */
+}
+
+/* Sección de resumen de perfil (nueva clase para el tema) */
+.profile-summary-futuristic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 20px;
+    background-color: #161b22; /* Fondo de sección oscuro */
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    color: #00bfff;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-text .description {
+    text-align: justify;
+    color: #b3c0cf;
+}
+
+.profile-gif img {
+    border-radius: 8px;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+/* Contenedor de los badges de tecnología */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #0d1117;
+}
+
+.badges-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón en los badges */
+}
+
+/* Estilos para la sección de lenguajes más usados */
+.most-used-langs {
+    margin-top: 40px;
+}
+
+.most-used-langs h3 {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.most-used-langs img {
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón */
+}
+
+/* Contenedor de proyectos */
+.projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #161b22;
+}
+
+.projects-section h2 {
+    color: #00bfff;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-link {
+    background-color: #24292e;
+    border: 1px solid #4dff88;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(77, 255, 136, 0.3);
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #4dff88;
+}
+
+.project-link h3 {
+    margin: 0;
+    color: #00bfff;
+}
+
+.project-link p {
+    margin: 5px 0 0;
+    font-style: italic;
+    color: #b3c0cf;
+}
+
+/* Estilos para la sección de aprendizaje */
+.learning-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #0d1117;
+}
+
+.learning-section h2 {
+    color: #00bfff;
+}
+
+.learning-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.learning-section li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #b3c0cf;
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.3);
+}
+
+/* Estilos del Footer */
+.futuristic-footer {
+    background-color: #161b22;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #4dff88;
+}
+
+.futuristic-footer p {
+    margin: 10px 0 0;
+    color: #b3c0cf;
+    font-size: 0.9em;
+}
+
+.futuristic-footer .social-icons {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.futuristic-footer .social-icons .icon-link img {
+    margin: 0 10px;
+}
