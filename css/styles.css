@@ -26,16 +26,8 @@ h1, h2, h3 {
     z-index: 1; 
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para que el texto resalte */
-    z-index: 2;
-}
+
+
 
 .header-content {
     position: relative;
@@ -59,7 +51,7 @@ h1, h2, h3 {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 3;
+    z-index: 4; /* Aumentado el z-index */
 }
 
 .navbar a {
@@ -81,7 +73,7 @@ h1, h2, h3 {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    z-index: 3;
+    z-index: 4; /* Aumentado el z-index */
 }
 
 .social-icons .icon-link img {
@@ -109,6 +101,8 @@ h1, h2, h3 {
     gap: 40px;
     padding: 80px 20px;
     background-color: #161b22; /* Fondo de sección oscuro */
+    /* Nueva propiedad para evitar el desbordamiento horizontal */
+    overflow-x: hidden; 
 }
 
 .about-text {
@@ -127,10 +121,18 @@ h1, h2, h3 {
     color: #b3c0cf;
 }
 
-.profile-gif img {
+/* Nuevo estilo para el contenedor del GIF */
+.profile-gif-container {
+    max-width: 50%; /* Limita el ancho del contenedor del GIF */
+    text-align: center; /* Centra el GIF dentro de su contenedor */
+}
+
+.profile-gif-container img {
     border-radius: 8px;
     border: 2px solid #00bfff;
     box-shadow: 0 0 10px #00bfff;
+    max-width: 100%; /* El GIF se ajusta a su contenedor */
+    height: auto; /* Mantiene la proporción */
 }
 
 /* Contenedor de los badges de tecnología */
@@ -149,23 +151,13 @@ h1, h2, h3 {
     filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón en los badges */
 }
 
-/* Estilos para el bloque de código */
-.code-block {
-    background-color: #161b22;
-    color: #4dff88; /* Verde neón para el código */
-    padding: 20px;
-    border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-    white-space: pre;
-    overflow-x: auto;
-    margin-top: 20px;
-    border: 1px solid #4dff88;
-}
-
 /* Estilos para la sección de lenguajes más usados */
 .most-used-langs {
     margin-top: 40px;
+    /* Aseguramos que el contenedor se centre y tenga un ancho máximo */
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .most-used-langs h3 {
@@ -176,6 +168,8 @@ h1, h2, h3 {
 
 .most-used-langs img {
     filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón */
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    height: auto;
 }
 
 /* Contenedor de proyectos */
@@ -385,6 +379,7 @@ h1, h2, h3 {
 
 .form-group input,
 .form-group textarea {
+    width: 100%; 
     flex: 1; /* El input/textarea ocupa el espacio restante */
     padding: 12px;
     border: 1px solid #4dff88;
@@ -426,23 +421,76 @@ h1, h2, h3 {
 }
 
 @media (max-width: 768px) {
-    .profile-summary-futuristic {
-        flex-direction: column;
-        text-align: center;
+    /* Ajustes generales para pantallas pequeñas */
+    body {
+        font-size: 14px;
     }
 
+    /* Reducir el tamaño de las fuentes en la cabecera */
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .header-content p {
+        font-size: 1.2em;
+    }
+    
+    .navbar {
+        position: static;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        z-index: 4;
+    }
+    
+    .navbar a {
+        margin: 0 10px;
+    }
+    
     .social-icons {
         position: static;
-        transform: none;
         flex-direction: row;
         justify-content: center;
         margin-top: 20px;
+        transform: none;
+        width: 100%;
+        z-index: 4;
     }
-
+    
     .social-icons .icon-link img {
         margin: 0 10px;
     }
     
+    .hero {
+        padding: 80px 20px 40px;
+    }
+
+    /* Columnas a una sola columna para pantallas pequeñas */
+    .profile-summary-futuristic {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Centrar la imagen en la vista móvil */
+    .profile-gif-container {
+        order: -1; /* Mueve el contenedor del GIF al principio */
+        margin-bottom: 20px;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .about-text .description {
+        text-align: left;
+    }
+
+    /* Ajustes para el grid de proyectos */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Formulario de contacto */
     .form-group {
         flex-direction: column; /* Apila las etiquetas y los campos en pantallas pequeñas */
         align-items: flex-start;
@@ -453,4 +501,70 @@ h1, h2, h3 {
         width: auto; /* Ancho automático para etiquetas */
         text-align: left; /* Alineación a la izquierda */
     }
+    
+    .form-button {
+        align-self: stretch; /* El botón se extiende a todo el ancho */
+    }
 }
+
+@media (max-width: 480px) {
+    /* Ajustes adicionales para móviles muy pequeños */
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .header-content p {
+        font-size: 1em;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+}
+
+/* Ajuste para el GIF de perfil */
+.profile-gif {
+    max-width: 100%;
+    text-align: center;
+}
+
+.profile-gif img {
+    border-radius: 8px;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+    max-width: 100%; /* Que nunca se salga */
+    height: auto;
+}
+
+/* Navbar en móviles con mejor contraste */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Ajuste para íconos sociales en móvil */
+@media (max-width: 768px) {
+    .social-icons {
+        margin-top: 15px;
+        gap: 15px;
+    }
+}
+
+/* Ajustes de tipografía extra para móviles muy pequeños */
+@media (max-width: 360px) {
+    .header-content h1 {
+        font-size: 1.8em;
+    }
+    .header-content p {
+        font-size: 0.9em;
+    }
+    .about-text h2 {
+        font-size: 1.6em;
+    }
+}
+
+

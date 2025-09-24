@@ -26,17 +26,6 @@ h1, h2, h3 {
     z-index: 1; 
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para que el texto resalte */
-    z-index: 2;
-}
-
 .header-content {
     position: relative;
     z-index: 3;
@@ -218,3 +207,124 @@ h1, h2, h3 {
 .futuristic-footer .social-icons .icon-link img {
     margin: 0 10px;
 }
+
+/* === RESPONSIVIDAD === */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    .header-content h1 {
+        font-size: 3em;
+    }
+
+    .header-content p {
+        font-size: 1.2em;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 90%;
+    }
+
+    .about-info {
+        margin-top: 20px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    /* Ajustes en header */
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .navbar {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .navbar a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 0.95em;
+    }
+
+    .social-icons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .social-icons .icon-link img {
+        width: 35px;
+        height: 35px;
+        margin: 0 8px;
+    }
+
+    /* About */
+    .about-me {
+        padding: 40px 15px;
+        gap: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8em;
+    }
+
+    .about-text .description,
+    .about-text .quote {
+        font-size: 0.95em;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Enlaces rápidos */
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .link-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Footer */
+    .futuristic-footer p {
+        font-size: 0.8em;
+    }
+}
+
+/* Navbar en móviles con mejor contraste */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .link-card {
+        width: 80%;
+        max-width: 280px;
+    }
+}
+
