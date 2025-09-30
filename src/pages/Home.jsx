@@ -7,7 +7,7 @@ function Home() {
   const { theme } = useTheme();
 
   return (
-    <div className={`home-content ${theme}`}>
+    <div>
       <header className="container">
         <h1>Héctor Robledo</h1>
         <p>Future FullStack Developer | Tech Enthusiast</p>

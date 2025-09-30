@@ -8,14 +8,15 @@ function App() {
   const { theme } = useTheme();
 
   return (
-    <div className={theme}>
+    <div className={`home-content ${theme}`}>
       <AppNavbar />
-      <div className="container mt-4">
+      <main className="container mt-4" style={{ flex: 1 }}>
         <AppRouter />
-      </div>
+      </main>
       <Footer />
     </div>
   );
 }
+
 
 export default App;
