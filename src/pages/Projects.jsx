@@ -1,14 +1,24 @@
+import React from "react";
+import { useTheme } from "../context/ThemeContext";
+import ProjectCard from "../components/ProjectCard.jsx";
+import "../styles/theme.css";
+import {projectsData} from "../utils/MockProjects.js";
+
 function Projects() {
+  const { theme } = useTheme();
+
   return (
-    <div className="container">
-      <h1>Mis Proyectos</h1>
-      <p>Aquí encontrarás algunos de los proyectos en los que he trabajado.</p>
-      <ul>
-        <li>BackEnd de una perfumería</li>
-        <li>Desarrollo de modelos de microservicios con Spring Boot</li>
-        <li>BackEnd de un Ecommerce</li>
-        <li>Front de una pastelería</li>
-      </ul>
+    <div className={`projects-page ${theme}`}>
+      <main>
+        <section id="projects" className="projects-section">
+          <h2 className="section-title">Proyectos Destacados</h2>
+          <div className="projects-grid">
+            {[...projectsData].sort((a, b) => a.title.localeCompare(b.title)).map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

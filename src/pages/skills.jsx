@@ -19,7 +19,7 @@ function Skills() {
 
           <div className="about-text">
             <p className="description">
-              Soy un apasionado de la tecnología en constante aprendizaje. Mis principales habilidades se centran
+              Mis principales habilidades se centran
               en el desarrollo de back-end y la resolución de problemas.
             </p>
 
