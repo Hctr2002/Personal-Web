@@ -1,29 +1,29 @@
 /* Importar fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,700&display=swap');
 
-/* Estilos Generales para el tema futurista */
+/* ====== ESTILOS GENERALES ====== */
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    color: #f0f0f0; /* Color de texto claro */
+    color: #f0f0f0;
     line-height: 1.6;
-    background-color: #0d1117; /* Fondo oscuro */
+    background-color: #0d1117;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #00bfff; /* Color de acento neón */
+    color: #00bfff;
 }
 
-/* Sección de la Cabecera (Header) */
+/* ====== HEADER ====== */
 .hero {
     background: url('../images/Fondo.png') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .hero::before {
@@ -31,12 +31,9 @@ h1, h2, h3 {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Oscurece la imagen */
+    background: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
-
-
-
 
 .header-content {
     position: relative;
@@ -46,21 +43,21 @@ h1, h2, h3 {
 .header-content h1 {
     font-size: 4em;
     margin-bottom: 0.2em;
-    text-shadow: 0 0 10px #00bfff; /* Efecto de brillo de neón */
+    text-shadow: 0 0 10px #00bfff;
 }
 
 .header-content p {
     font-size: 1.5em;
     font-style: italic;
-    color: #4dff88; /* Color de acento secundario */
+    color: #4dff88;
 }
 
-/* Navegación y redes sociales */
+/* ====== NAVBAR Y REDES ====== */
 .navbar {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 4; /* Aumentado el z-index */
+    z-index: 4;
 }
 
 .navbar a {
@@ -72,7 +69,7 @@ h1, h2, h3 {
 }
 
 .navbar a:hover {
-    color: #4dff88; /* Cambio de color al pasar el cursor */
+    color: #4dff88;
 }
 
 .social-icons {
@@ -82,36 +79,36 @@ h1, h2, h3 {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    z-index: 4; /* Aumentado el z-index */
+    z-index: 4;
 }
 
 .social-icons .icon-link img {
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    display: block; 
-    margin: 10px 0; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 10px 0;
     border: 2px solid transparent;
-    box-shadow: 0 0 5px rgba(0, 191, 255, 0.5); /* Sombra de neón */
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .social-icons .icon-link img:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff; /* Efecto de brillo más intenso */
+    box-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff;
 }
 
-/* Sección de resumen de perfil (nueva clase para el tema) */
-.profile-summary-futuristic {
+/* ====== ABOUT / PERFIL ====== */
+.profile-summary-futuristic,
+.about-me {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     padding: 80px 20px;
-    background-color: #161b22; /* Fondo de sección oscuro */
-    /* Nueva propiedad para evitar el desbordamiento horizontal */
-    overflow-x: hidden; 
+    background-color: #161b22;
+    overflow-x: hidden;
 }
 
 .about-text {
@@ -130,23 +127,84 @@ h1, h2, h3 {
     color: #b3c0cf;
 }
 
-/* Nuevo estilo para el contenedor del GIF */
-.profile-gif-container {
-    max-width: 50%; /* Limita el ancho del contenedor del GIF */
-    text-align: center; /* Centra el GIF dentro de su contenedor */
+.about-text .quote {
+    font-style: italic;
+    color: #b3c0cf;
+    border-left: 3px solid #4dff88;
+    padding-left: 15px;
+    margin-top: 20px;
 }
 
-.profile-gif-container img {
+.about-info {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+/* GIF de perfil */
+.profile-gif-container,
+.profile-gif {
+    max-width: 50%;
+    text-align: center;
+}
+
+.profile-gif-container img,
+.profile-gif img {
     border-radius: 8px;
     border: 2px solid #00bfff;
     box-shadow: 0 0 10px #00bfff;
-    max-width: 100%; /* El GIF se ajusta a su contenedor */
-    height: auto; /* Mantiene la proporción */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Contenedor de los badges de tecnología */
+/* ====== ENLACES RÁPIDOS ====== */
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #0d1117;
+    flex-wrap: wrap;
+}
+
+.link-card {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+    text-align: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+}
+
+.link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff;
+}
+
+.link-card i {
+    font-size: 3em;
+    color: #4dff88;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #4dff88;
+}
+
+.link-card h3 {
+    color: #f0f0f0;
+}
+
+/* ====== SKILLS / BADGES ====== */
 .skills-section {
-    padding: 60px 20px;
     text-align: center;
     background-color: #0d1117;
 }
@@ -157,31 +215,10 @@ h1, h2, h3 {
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
-    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón en los badges */
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7));
 }
 
-/* Estilos para la sección de lenguajes más usados */
-.most-used-langs {
-    margin-top: 40px;
-    /* Aseguramos que el contenedor se centre y tenga un ancho máximo */
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.most-used-langs h3 {
-    color: #f0f0f0;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.most-used-langs img {
-    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.7)); /* Sombra de neón */
-    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
-    height: auto;
-}
-
-/* Contenedor de proyectos */
+/* ====== PROYECTOS ====== */
 .projects-section {
     padding: 60px 20px;
     text-align: center;
@@ -228,7 +265,6 @@ h1, h2, h3 {
     color: #b3c0cf;
 }
 
-/* Nuevos estilos para la página de Experiencia (experience.html) */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -291,9 +327,8 @@ h1, h2, h3 {
     transform: scale(1.05);
 }
 
-/* Estilos para la sección de aprendizaje */
+/* ====== LEARNING ====== */
 .learning-section {
-    padding: 60px 20px;
     text-align: center;
     background-color: #0d1117;
 }
@@ -304,7 +339,6 @@ h1, h2, h3 {
 
 .learning-section ul {
     list-style-type: none;
-    padding: 0;
 }
 
 .learning-section li {
@@ -314,33 +348,7 @@ h1, h2, h3 {
     text-shadow: 0 0 5px rgba(0, 191, 255, 0.3);
 }
 
-/* Estilos del Footer */
-.futuristic-footer {
-    background-color: #161b22;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #4dff88;
-}
-
-.futuristic-footer p {
-    margin: 10px 0 0;
-    color: #b3c0cf;
-    font-size: 0.9em;
-}
-
-.futuristic-footer .social-icons {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.futuristic-footer .social-icons .icon-link img {
-    margin: 0 10px;
-}
-
-/* Nuevos estilos para la página de Contacto (contact.html) */
+/* ====== CONTACTO ====== */
 .contact-section {
     display: flex;
     justify-content: center;
@@ -372,36 +380,32 @@ h1, h2, h3 {
 
 .form-group {
     margin-bottom: 20px;
-    display: flex; /* Usamos flexbox para alinear label e input */
-    align-items: center; /* Centramos verticalmente */
-    gap: 20px; /* Espacio entre label e input */
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0; /* Eliminamos el margen inferior */
-    width: 80px; /* Ancho fijo para las etiquetas */
-    text-align: right; /* Alineamos el texto a la derecha */
+    width: 80px;
+    text-align: right;
     font-weight: bold;
     color: #b3c0cf;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%; 
-    flex: 1; /* El input/textarea ocupa el espacio restante */
+    flex: 1;
     padding: 12px;
     border: 1px solid #4dff88;
     background-color: #0d1117;
     color: #f0f0f0;
     border-radius: 8px;
     font-size: 1em;
-    box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
 }
 
 .form-group input:focus,
@@ -420,8 +424,8 @@ h1, h2, h3 {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     align-self: flex-end;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .form-button:hover {
@@ -429,151 +433,117 @@ h1, h2, h3 {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    /* Ajustes generales para pantallas pequeñas */
-    body {
-        font-size: 14px;
-    }
+/* ====== FOOTER ====== */
+.futuristic-footer {
+    background-color: #161b22;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #4dff88;
+}
 
-    /* Reducir el tamaño de las fuentes en la cabecera */
-    .header-content h1 {
-        font-size: 2.5em;
+.futuristic-footer p {
+    margin: 10px 0 0;
+    color: #b3c0cf;
+    font-size: 0.9em;
+}
+
+.futuristic-footer .social-icons {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.futuristic-footer .social-icons .icon-link img {
+    margin: 0 10px;
+}
+
+/* ====== RESPONSIVIDAD ====== */
+@media (max-width: 992px) {
+    .header-content h1 { font-size: 3em; }
+    .header-content p { font-size: 1.2em; }
+    .about-me, .profile-summary-futuristic {
+        flex-direction: column;
+        text-align: center;
     }
-    
-    .header-content p {
-        font-size: 1.2em;
-    }
-    
+    .about-text { max-width: 90%; }
+    .about-info { margin-top: 20px; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 14px; }
+
+    .hero { padding: 60px 15px; }
+    .header-content h1 { font-size: 2.5em; }
+    .header-content p { font-size: 1.2em; }
+
     .navbar {
         position: static;
         width: 100%;
         text-align: center;
-        padding-top: 10px;
-        z-index: 4;
+        padding: 10px 0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background-color: rgba(0, 0, 0, 0.6);
     }
-    
-    .navbar a {
-        margin: 0 10px;
-    }
-    
+
+    .navbar a { margin: 0 10px; }
+
     .social-icons {
         position: static;
         flex-direction: row;
         justify-content: center;
-        margin-top: 20px;
-        transform: none;
-        width: 100%;
-        z-index: 4;
+        margin-top: 15px;
+        gap: 15px;
     }
-    
+
     .social-icons .icon-link img {
-        margin: 0 10px;
-    }
-    
-    .hero {
-        padding: 80px 20px 40px;
+        width: 35px; height: 35px;
+        margin: 0 8px;
     }
 
-    /* Columnas a una sola columna para pantallas pequeñas */
-    .profile-summary-futuristic {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    /* Centrar la imagen en la vista móvil */
-    .profile-gif-container {
-        order: -1; /* Mueve el contenedor del GIF al principio */
-        margin-bottom: 20px;
-    }
-    
-    .about-text {
-        text-align: center;
-    }
-    
-    .about-text .description {
-        text-align: left;
-    }
+    .profile-gif-container { order: -1; margin-bottom: 20px; }
+    .about-text { text-align: center; }
+    .about-text .description { text-align: left; }
 
-    /* Ajustes para el grid de proyectos */
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Formulario de contacto */
+    .projects-grid { grid-template-columns: 1fr; }
+
     .form-group {
-        flex-direction: column; /* Apila las etiquetas y los campos en pantallas pequeñas */
+        flex-direction: column;
         align-items: flex-start;
         gap: 5px;
     }
-    
-    .form-group label {
-        width: auto; /* Ancho automático para etiquetas */
-        text-align: left; /* Alineación a la izquierda */
+    .form-group label { width: auto; text-align: left; }
+    .form-button { align-self: stretch; }
+
+    .quick-links { flex-direction: column; align-items: center; gap: 20px; }
+    .link-card { width: 100%; max-width: 280px; }
+
+    .futuristic-footer p { font-size: 0.8em; }
+}
+
+@media (max-width: 600px) {
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
     }
-    
-    .form-button {
-        align-self: stretch; /* El botón se extiende a todo el ancho */
+    .link-card {
+        width: 80%;
+        max-width: 280px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Ajustes adicionales para móviles muy pequeños */
-    .header-content h1 {
-        font-size: 2em;
-    }
-
-    .header-content p {
-        font-size: 1em;
-    }
-    
-    .contact-card {
-        padding: 20px;
-    }
+    .header-content h1 { font-size: 2em; }
+    .header-content p { font-size: 1em; }
+    .contact-card { padding: 20px; }
 }
 
-/* Ajuste para el GIF de perfil */
-.profile-gif {
-    max-width: 100%;
-    text-align: center;
-}
-
-.profile-gif img {
-    border-radius: 8px;
-    border: 2px solid #00bfff;
-    box-shadow: 0 0 10px #00bfff;
-    max-width: 100%; /* Que nunca se salga */
-    height: auto;
-}
-
-/* Navbar en móviles con mejor contraste */
-@media (max-width: 768px) {
-    .navbar {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 10px 0;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-}
-
-/* Ajuste para íconos sociales en móvil */
-@media (max-width: 768px) {
-    .social-icons {
-        margin-top: 15px;
-        gap: 15px;
-    }
-}
-
-/* Ajustes de tipografía extra para móviles muy pequeños */
 @media (max-width: 360px) {
-    .header-content h1 {
-        font-size: 1.8em;
-    }
-    .header-content p {
-        font-size: 0.9em;
-    }
-    .about-text h2 {
-        font-size: 1.6em;
-    }
+    .header-content h1 { font-size: 1.8em; }
+    .header-content p { font-size: 0.9em; }
+    .about-text h2 { font-size: 1.6em; }
 }
-
-
