@@ -16,13 +16,13 @@ function Contact() {
 
           <form action="https://formsubmit.co/hectorrobledo2332@gmail.com" method="POST" className="contact-form">
             <label htmlFor="name">Nombre</label>
-            <input type="text" id="name" placeholder="Tu nombre" required />
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
 
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="tu@email.com" required />
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
 
             <label htmlFor="message">Mensaje</label>
-            <textarea id="message" placeholder="Escribe tu mensaje..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
 
             <button type="submit" className="contact-btn">Enviar</button>
           </form>
