@@ -402,6 +402,7 @@ h1, h2, h3 {
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 95%;
 }
 
 .form-group textarea {
